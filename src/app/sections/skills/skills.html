@@ -1,0 +1,26 @@
+<section id="skills" class="skills section">
+  <app-section-heading
+    index="02."
+    [title]="languageService.t().skills.title"
+    [subtitle]="languageService.t().skills.subtitle"
+  />
+
+  <div class="skills__grid">
+    @for (entry of categories(); track entry[0]) {
+      <div class="skills__category">
+        <h3 class="skills__category-title">{{ entry[0] }}</h3>
+        <div class="skills__list">
+          @for (skill of entry[1]; track skill.name) {
+            <div class="skills__item">
+              <div class="skills__item-header">
+                <span class="skills__name">{{ skill.name }}</span>
+                <span class="skills__level">{{ skill.level }}%</span>
+              </div>
+              <mat-progress-bar mode="determinate" [value]="skill.level" />
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

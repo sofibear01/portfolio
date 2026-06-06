@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.main {
+  padding-top: 4rem;
+}
+
+.main__container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

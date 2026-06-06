@@ -1,0 +1,72 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <mat-toolbar class="header__toolbar">
+    <button
+      class="header__logo"
+      (click)="scrollTo('home')"
+      [attr.aria-label]="languageService.t().header.logoAria"
+    >
+      <span class="header__logo-bracket">&lt;</span>
+      <span class="header__logo-text">SD</span>
+      <span class="header__logo-bracket">/&gt;</span>
+    </button>
+
+    <nav class="header__nav" [attr.aria-label]="languageService.t().header.navAria">
+      @for (item of navItems(); track item.id) {
+        <button mat-button class="header__nav-link" (click)="scrollTo(item.id)">
+          {{ item.label }}
+        </button>
+      }
+    </nav>
+
+    <div class="header__actions">
+      <div class="header__lang" [attr.aria-label]="languageService.t().header.languageAria">
+        <button
+          class="header__lang-btn"
+          [class.header__lang-btn--active]="languageService.lang() === 'es'"
+          (click)="setLanguage('es')"
+        >
+          ES
+        </button>
+        <button
+          class="header__lang-btn"
+          [class.header__lang-btn--active]="languageService.lang() === 'en'"
+          (click)="setLanguage('en')"
+        >
+          EN
+        </button>
+      </div>
+
+      <button
+        mat-icon-button
+        (click)="themeService.toggle()"
+        [attr.aria-label]="
+          themeService.isDark()
+            ? languageService.t().header.themeLight
+            : languageService.t().header.themeDark
+        "
+      >
+        <mat-icon>{{ themeService.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        class="header__menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="languageService.t().header.menuToggle"
+      >
+        <mat-icon>{{ menuOpen() ? 'close' : 'menu' }}</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  @if (menuOpen()) {
+    <nav class="header__mobile-nav" [attr.aria-label]="languageService.t().header.mobileNavAria">
+      @for (item of navItems(); track item.id) {
+        <button mat-button class="header__mobile-link" (click)="scrollTo(item.id)">
+          {{ item.label }}
+        </button>
+      }
+    </nav>
+  }
+</header>

@@ -1,0 +1,136 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+
+  &--scrolled {
+    background: color-mix(in srgb, var(--surface) 85%, transparent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 var(--border);
+  }
+}
+
+.header__toolbar {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  background: transparent !important;
+  padding: 0 1.5rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0.25rem 0;
+  margin-right: auto;
+
+  &:hover .header__logo-text {
+    color: var(--accent);
+  }
+}
+
+.header__logo-bracket {
+  color: var(--accent);
+}
+
+.header__logo-text {
+  transition: color 0.2s ease;
+}
+
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.header__nav-link {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    color: var(--accent) !important;
+  }
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.header__lang {
+  display: flex;
+  align-items: center;
+  padding: 0.125rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-elevated);
+  margin-right: 0.25rem;
+}
+
+.header__lang-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &--active {
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    color: var(--accent);
+  }
+
+  &:hover:not(&--active) {
+    color: var(--text-secondary);
+  }
+}
+
+.header__menu-toggle {
+  display: flex;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem;
+  background: var(--surface-elevated);
+  border-bottom: 1px solid var(--border);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.header__mobile-link {
+  justify-content: flex-start !important;
+  width: 100%;
+  color: var(--text-secondary) !important;
+}

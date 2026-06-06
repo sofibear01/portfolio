@@ -1,0 +1,91 @@
+<section id="contact" class="contact section">
+  <app-section-heading
+    index="04."
+    [title]="languageService.t().contact.title"
+    [subtitle]="languageService.t().contact.subtitle"
+  />
+
+  <div class="contact__grid">
+    <div class="contact__info">
+      <p class="contact__intro">
+        {{ languageService.t().contact.intro }}
+      </p>
+
+      <div class="contact__details">
+        <a class="contact__detail" [href]="'mailto:' + static.email">
+          <mat-icon>mail</mat-icon>
+          <span>{{ static.email }}</span>
+        </a>
+        <div class="contact__detail">
+          <mat-icon>location_on</mat-icon>
+          <span>{{ languageService.t().location }}</span>
+        </div>
+      </div>
+
+      <div class="contact__social">
+        @for (link of socialLinks(); track link.key) {
+          <a
+            mat-stroked-button
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <mat-icon>{{ link.icon }}</mat-icon>
+            {{ link.label }}
+          </a>
+        }
+      </div>
+    </div>
+
+    <form class="contact__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ languageService.t().contact.form.name }}</mat-label>
+        <input
+          matInput
+          formControlName="name"
+          [placeholder]="languageService.t().contact.form.namePlaceholder"
+        />
+        @if (form.controls.name.hasError('required') && form.controls.name.touched) {
+          <mat-error>{{ languageService.t().contact.form.nameRequired }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ languageService.t().contact.form.email }}</mat-label>
+        <input
+          matInput
+          type="email"
+          formControlName="email"
+          [placeholder]="languageService.t().contact.form.emailPlaceholder"
+        />
+        @if (form.controls.email.hasError('email') && form.controls.email.touched) {
+          <mat-error>{{ languageService.t().contact.form.emailInvalid }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="contact__message">
+        <mat-label>{{ languageService.t().contact.form.message }}</mat-label>
+        <textarea
+          matInput
+          formControlName="message"
+          rows="5"
+          [placeholder]="languageService.t().contact.form.messagePlaceholder"
+        ></textarea>
+        @if (form.controls.message.hasError('minlength') && form.controls.message.touched) {
+          <mat-error>{{ languageService.t().contact.form.messageMinLength }}</mat-error>
+        }
+      </mat-form-field>
+
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="contact__submit"
+        [disabled]="submitted()"
+      >
+        <mat-icon>send</mat-icon>
+        {{ languageService.t().contact.form.submit }}
+      </button>
+    </form>
+  </div>
+</section>

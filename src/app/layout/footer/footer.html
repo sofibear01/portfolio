@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">&lt;SD /&gt;</span>
+      <p class="footer__tagline">{{ languageService.t().footer.tagline }}</p>
+    </div>
+
+    <div class="footer__social">
+      @for (link of socialLinks(); track link.key) {
+        <a
+          mat-icon-button
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.label"
+        >
+          <mat-icon>{{ link.icon }}</mat-icon>
+        </a>
+      }
+    </div>
+  </div>
+
+  <p class="footer__copy">
+    &copy; {{ year }} {{ static.name }}. {{ languageService.t().footer.rights }}
+  </p>
+</footer>

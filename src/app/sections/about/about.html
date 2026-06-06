@@ -1,0 +1,26 @@
+<section id="about" class="about section">
+  <app-section-heading
+    index="01."
+    [title]="languageService.t().about.title"
+    [subtitle]="languageService.t().about.subtitle"
+  />
+
+  <div class="about__grid">
+    <div class="about__text">
+      @for (paragraph of languageService.t().about.paragraphs; track paragraph) {
+        <p class="about__paragraph">{{ paragraph }}</p>
+      }
+    </div>
+
+    <div class="about__stats">
+      @for (stat of languageService.t().about.stats; track stat.label) {
+        <mat-card class="about__stat-card" appearance="outlined">
+          <mat-card-content>
+            <span class="about__stat-value">{{ stat.value }}</span>
+            <span class="about__stat-label">{{ stat.label }}</span>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </div>
+</section>

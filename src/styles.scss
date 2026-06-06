@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$rose-palette,
+        tertiary: mat.$magenta-palette,
+      ),
+      typography: (
+        plain-family: 'Inter',
+        brand-family: 'Inter',
+        bold-weight: 600,
+      ),
+      density: 0,
+    )
+  );
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --surface: #fdf2f8;
+  --surface-elevated: #ffffff;
+  --surface-code-header: #fce7f3;
+  --text-primary: #1f1020;
+  --text-secondary: #6b4a5e;
+  --text-muted: #a88da0;
+  --accent: #db2777;
+  --accent-secondary: #ec4899;
+  --border: #fbcfe8;
+  --shadow-md: 0 4px 6px -1px rgb(219 39 119 / 0.08), 0 2px 4px -2px rgb(219 39 119 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(219 39 119 / 0.1), 0 4px 6px -4px rgb(219 39 119 / 0.06);
+  --syntax-keyword: #be185d;
+  --syntax-property: #db2777;
+  --syntax-string: #059669;
+  --syntax-boolean: #d97706;
+}
+
+html[data-theme='dark'],
+html.dark-theme {
+  color-scheme: dark;
+
+  @include mat.theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: mat.$rose-palette,
+        tertiary: mat.$magenta-palette,
+      ),
+      typography: (
+        plain-family: 'Inter',
+        brand-family: 'Inter',
+        bold-weight: 600,
+      ),
+      density: 0,
+    )
+  );
+
+  --surface: #140810;
+  --surface-elevated: #1f0f18;
+  --surface-code-header: #2a1522;
+  --text-primary: #fce7f3;
+  --text-secondary: #d4a5bc;
+  --text-muted: #9a7088;
+  --accent: #f472b6;
+  --accent-secondary: #f9a8d4;
+  --border: #3d1f32;
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.35), 0 2px 4px -2px rgb(244 114 182 / 0.08);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(244 114 182 / 0.1);
+  --syntax-keyword: #f9a8d4;
+  --syntax-property: #f472b6;
+  --syntax-string: #6ee7b7;
+  --syntax-boolean: #fcd34d;
+}
+
+:root {
+  --content-max-width: 72rem;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --section-padding: 5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--surface);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3.5rem;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+mat-icon {
+  font-family: 'Material Icons' !important;
+}
