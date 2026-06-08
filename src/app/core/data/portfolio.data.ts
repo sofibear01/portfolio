@@ -24,7 +24,7 @@ export const PORTFOLIO_STATIC = {
   name: 'Sofia Bearzotti',
   whatsapp: '5493564358071',
   email: 'sofia88837utn@gmail.com',
-  highlights: ['Angular', 'TypeScript', 'Node.js'],
+  highlights: ['Angular', 'TypeScript', 'Node.js', '.NET'],
   skills: [
     // Frontend
     {
