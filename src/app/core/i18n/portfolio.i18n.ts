@@ -171,7 +171,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       title: 'Contacto',
       subtitle: '¿Tenes un proyecto en mente o queres conectar?',
       intro:
-        'Actualmente estoy abierta a nuevas oportunidades y colaboraciones.',
+        '',
       form: {
         name: 'Nombre',
         namePlaceholder: 'Tu nombre',
@@ -286,7 +286,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       title: 'Contact',
       subtitle: 'Have a project in mind or want to connect? Send me a message.',
       intro:
-        "I'm currently open to new opportunities and collaborations.",
+        "",
       form: {
         name: 'Name',
         namePlaceholder: 'Your name',
