@@ -15,7 +15,7 @@
 
     <div class="home__chips">
       @for (tech of static.highlights; track tech) {
-        <span class="home__chip">{{ tech }}</span>
+      <span class="home__chip">{{ tech }}</span>
       }
     </div>
 
@@ -31,21 +31,14 @@
     </div>
   </div>
 
-  <div class="home__visual" aria-hidden="true">
-    <div class="home__code-block">
-      <div class="home__code-header">
-        <span class="home__dot home__dot--red"></span>
-        <span class="home__dot home__dot--yellow"></span>
-        <span class="home__dot home__dot--green"></span>
-        <span class="home__code-filename">developer.ts</span>
-      </div>
-      <pre class="home__code"><code><span class="token-keyword">const</span> developer = &#123;
-  <span class="token-property">name</span>: <span class="token-string">'{{ static.name }}'</span>,
-  <span class="token-property">role</span>: <span class="token-string">'{{ languageService.t().role }}'</span>,
-  <span class="token-property">skills</span>: [<span class="token-string">'Angular'</span>, <span class="token-string">'TypeScript'</span>],
-  <span class="token-property">passion</span>: <span class="token-string">'{{ languageService.t().home.codePassion }}'</span>,
-  <span class="token-property">available</span>: <span class="token-boolean">true</span>
-&#125;;</code></pre>
+  <div class="home__visual">
+    <div class="home__avatar-container">
+      <img
+        src="images/emoji.png"
+        alt="Sofia Bearzotti"
+        class="home__avatar"
+      />
     </div>
   </div>
+
 </section>

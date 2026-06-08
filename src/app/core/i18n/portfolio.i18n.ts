@@ -7,7 +7,7 @@ export interface PortfolioTranslations {
     title: string;
     description: string;
   };
-  nav: Record<'home' | 'about' | 'skills' | 'projects' | 'contact', string>;
+  nav: Record<'home' | 'about' | 'education' | 'skills' | 'projects' | 'contact', string>;
   header: {
     logoAria: string;
     navAria: string;
@@ -29,6 +29,13 @@ export interface PortfolioTranslations {
     subtitle: string;
     paragraphs: string[];
     stats: { value: string; label: string }[];
+  };
+  education: {
+    title: string;
+    subtitle: string;
+    degree: string;
+    university: string;
+    graduation: string;
   };
   skills: {
     title: string;
@@ -88,6 +95,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     nav: {
       home: 'Inicio',
       about: 'Sobre mí',
+      education: 'Educación',
       skills: 'Habilidades',
       projects: 'Proyectos',
       contact: 'Contacto',
@@ -102,7 +110,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       languageAria: 'Seleccionar idioma',
     },
     home: {
-      greeting: '¡Hola, mundo!',
+      greeting: '¡Hola!',
       titlePrefix: 'Soy',
       viewProjects: 'Ver proyectos',
       getInTouch: 'Contáctame',
@@ -110,79 +118,66 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     },
     about: {
       title: 'Sobre mí',
-      subtitle: 'Una breve introducción sobre quién soy y qué impulsa mi trabajo.',
+      subtitle: '',
       paragraphs: [
-        'Soy una desarrolladora de software apasionada por crear aplicaciones limpias y escalables. Me encanta convertir problemas complejos en experiencias de usuario intuitivas.',
-        'Con experiencia en todo el stack, me especializo en Angular, TypeScript y arquitecturas cloud-native. Creo en escribir código mantenible y colaborar estrechamente con equipos.',
-        'Cuando no estoy programando, contribuyo a open source, exploro nuevos frameworks y comparto conocimiento a través de escritura técnica.',
+        'Soy Ingeniera en Sistemas y Desarrolladora Full Stack con experiencia en el desarrollo de aplicaciones trabajando con tecnologías como .NET Framework, .NET Core, Angular y SQL Server, participando tanto en el desarrollo backend como frontend y colaborando en todas las etapas del ciclo de vida del software.',
+
+        'Además del desarrollo, cuento con experiencia en análisis funcional, documentación técnica y metodologías ágiles. Disfruto trabajar en equipo, comprender las necesidades del negocio y transformarlas en soluciones tecnológicas que aporten valor real.'
+
       ],
       stats: [
-        { value: '5+', label: 'Años de experiencia' },
-        { value: '30+', label: 'Proyectos entregados' },
-        { value: '15+', label: 'Tecnologías' },
+        { value: '3+', label: 'Años de experiencia' },
+        { value: 'C1', label: 'Inglés' }
       ],
+    },
+    education: {
+      title: 'Educación',
+      subtitle: 'Formación académica y desarrollo profesional.',
+      degree: 'Ingeniería en Sistemas de Información',
+      university: 'Universidad Tecnológica Nacional - Facultad Regional Córdoba',
+      graduation: 'Graduada en 2024',
     },
     skills: {
       title: 'Habilidades',
-      subtitle: 'Tecnologías y herramientas que uso para dar vida a las ideas.',
+      subtitle: 'Tecnologías y herramientas.',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend',
-        devops: 'DevOps',
-        quality: 'Calidad',
-        softSkills: 'Habilidades blandas',
+        database: 'Database',
+        tools: 'Tools',
+        softSkills: 'Soft Skills',
       },
     },
     projects: {
       title: 'Proyectos',
-      subtitle: 'Trabajos seleccionados que muestran mi enfoque al desarrollo de software.',
-      featured: 'Destacado',
+      subtitle: '',
+      featured: '',
       code: 'Código',
       liveDemo: 'Demo en vivo',
       items: {
-        ecommerce: {
-          title: 'Plataforma E-Commerce',
+        fitbyjeny: {
+          title: 'Fit By Jeny',
           description:
-            'Tienda online escalable con inventario en tiempo real, integración de pagos y panel de administración con Angular y Node.js.',
-        },
-        taskManager: {
-          title: 'App de Gestión de Tareas',
-          description:
-            'Herramienta colaborativa de gestión de proyectos con tableros drag-and-drop, asignaciones de equipo y notificaciones en tiempo real.',
-        },
-        analytics: {
-          title: 'Dashboard de Analítica',
-          description:
-            'Panel de visualización de datos interactivo con gráficos personalizados, filtros y exportación para business intelligence.',
+            'Sitio web y plataforma desarrollada para una profesional del fitness con gestión de contenido, membresías y procesamiento de pagos.'
         },
         portfolio: {
-          title: 'Portfolio de Desarrolladora',
+          title: 'Portfolio',
           description:
-            'Portfolio personal responsive con modo oscuro, animaciones suaves y puntuaciones de rendimiento optimizadas.',
-        },
-        weather: {
-          title: 'Cliente de API del Clima',
-          description:
-            'Aplicación de clima con geolocalización, pronóstico de 7 días y caché offline mediante service workers.',
-        },
-        blogCms: {
-          title: 'CMS de Blog',
-          description:
-            'Sistema de gestión de contenido headless con editor markdown, optimización SEO y control de acceso por roles.',
+            'Portfolio personal responsive con modo oscuro y animaciones.',
         },
       },
     },
     contact: {
       title: 'Contacto',
-      subtitle: '¿Tienes un proyecto en mente o quieres conectar? Envíame un mensaje.',
+      subtitle: '¿Tenes un proyecto en mente o queres conectar?',
       intro:
-        'Actualmente estoy abierta a nuevas oportunidades y colaboraciones. Tanto si tienes una pregunta como si solo quieres saludar, no dudes en escribirme.',
+        'Actualmente estoy abierta a nuevas oportunidades y colaboraciones.',
       form: {
         name: 'Nombre',
         namePlaceholder: 'Tu nombre',
         nameRequired: 'El nombre es obligatorio',
         email: 'Correo electrónico',
-        emailPlaceholder: 'tu@ejemplo.com',
+        emailPlaceholder: 'sofia88837utn@ejemplo.com',
         emailInvalid: 'Introduce un correo válido',
         message: 'Mensaje',
         messagePlaceholder: 'Cuéntame sobre tu proyecto...',
@@ -201,9 +196,10 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       linkedin: 'LinkedIn',
       twitter: 'Twitter',
     },
-    role: 'Desarrolladora Full Stack',
-    tagline: 'Creando experiencias web elegantes y performantes con tecnologías modernas.',
-    location: 'Disponible para trabajo remoto',
+    role: 'Ingeniera en Sistemas | Full Stack Developer',
+    tagline:
+      'Desarrollo soluciones de software utilizando .NET, Angular y tecnologías modernas.',
+    location: 'Cordoba, Argentina',
   },
   en: {
     meta: {
@@ -214,6 +210,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     nav: {
       home: 'Home',
       about: 'About',
+      education: 'Education',
       skills: 'Skills',
       projects: 'Projects',
       contact: 'Contact',
@@ -228,7 +225,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       languageAria: 'Select language',
     },
     home: {
-      greeting: 'Hello, World!',
+      greeting: 'Hello!',
       titlePrefix: "I'm",
       viewProjects: 'View Projects',
       getInTouch: 'Get in Touch',
@@ -236,65 +233,52 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     },
     about: {
       title: 'About Me',
-      subtitle: 'A brief introduction to who I am and what drives my work.',
+      subtitle: '',
       paragraphs: [
-        'I am a passionate software developer focused on crafting clean, scalable applications. I enjoy turning complex problems into intuitive user experiences.',
-        'With experience across the full stack, I specialize in Angular, TypeScript, and cloud-native architectures. I believe in writing maintainable code and collaborating closely with teams.',
-        'When I am not coding, I contribute to open source, explore new frameworks, and share knowledge through technical writing.',
+        'I am a Systems Engineer and Full Stack Developer with experience building software solutions with technologies such as .NET Framework, .NET Core, Angular, and SQL Server, contributing to both backend and frontend development while participating in the entire software development lifecycle.',
+
+        'Beyond software development, I have experience in functional analysis, technical documentation, and agile methodologies. I enjoy collaborating with teams, understanding business needs, and turning them into valuable technological solutions.'
+
       ],
       stats: [
-        { value: '5+', label: 'Years Experience' },
-        { value: '30+', label: 'Projects Delivered' },
-        { value: '15+', label: 'Technologies' },
+        { value: '3+', label: 'Years Experience' },
+        { value: 'C1', label: 'English' }
       ],
+    },
+    education: {
+      title: 'Education',
+      subtitle: 'Academic background and professional development.',
+      degree: 'Information Systems Engineering',
+      university: 'National Technological University - Córdoba Regional Faculty',
+      graduation: 'Graduated in 2024',
     },
     skills: {
       title: 'Skills',
-      subtitle: 'Technologies and tools I use to bring ideas to life.',
+      subtitle: 'Technologies and tools.',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend',
-        devops: 'DevOps',
-        quality: 'Quality',
+        database: 'Database',
+        tools: 'Tools',
         softSkills: 'Soft Skills',
       },
     },
     projects: {
       title: 'Projects',
-      subtitle: 'Selected work showcasing my approach to building software.',
-      featured: 'Featured',
+      subtitle: '',
+      featured: '',
       code: 'Code',
       liveDemo: 'Live Demo',
       items: {
-        ecommerce: {
-          title: 'E-Commerce Platform',
+        fitbyjeny: {
+          title: 'Fit By Jeny',
           description:
-            'A scalable online store with real-time inventory, payment integration, and an admin dashboard built with Angular and Node.js.',
-        },
-        taskManager: {
-          title: 'Task Management App',
-          description:
-            'Collaborative project management tool with drag-and-drop boards, team assignments, and real-time notifications.',
-        },
-        analytics: {
-          title: 'Analytics Dashboard',
-          description:
-            'Interactive data visualization dashboard with custom charts, filters, and export capabilities for business intelligence.',
+            'Web platform developed for a fitness professional. Features content management, training plans, user authentication and external service integrations built with React, Node.js, Supabase and TypeScript.',
         },
         portfolio: {
           title: 'Developer Portfolio',
           description:
-            'Responsive personal portfolio with dark mode, smooth animations, and optimized performance scores.',
-        },
-        weather: {
-          title: 'Weather API Client',
-          description:
-            'Clean weather application with geolocation, 7-day forecasts, and offline caching using service workers.',
-        },
-        blogCms: {
-          title: 'Blog CMS',
-          description:
-            'Headless content management system with markdown editor, SEO optimization, and role-based access control.',
+            'Responsive personal portfolio with dark mode and animations',
         },
       },
     },
@@ -302,7 +286,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       title: 'Contact',
       subtitle: 'Have a project in mind or want to connect? Send me a message.',
       intro:
-        "I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out.",
+        "I'm currently open to new opportunities and collaborations.",
       form: {
         name: 'Name',
         namePlaceholder: 'Your name',
@@ -327,8 +311,9 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       linkedin: 'LinkedIn',
       twitter: 'Twitter',
     },
-    role: 'Full Stack Developer',
-    tagline: 'Building elegant, performant web experiences with modern technologies.',
-    location: 'Available for remote work',
+    role: 'Systems Engineer | Full Stack Developer',
+    tagline:
+      'Building software solutions using .NET, Angular and modern technologies.',
+    location: 'Cordoba, Argentina',
   },
 };

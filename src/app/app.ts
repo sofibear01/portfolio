@@ -6,10 +6,11 @@ import { About } from './sections/about/about';
 import { Skills } from './sections/skills/skills';
 import { Projects } from './sections/projects/projects';
 import { Contact } from './sections/contact/contact';
+import { Education } from './sections/education/education';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Home, About, Skills, Projects, Contact],
+  imports: [Header, Footer, Home, About, Education, Skills, Projects, Contact],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

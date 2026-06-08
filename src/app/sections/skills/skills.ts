@@ -1,12 +1,11 @@
 import { Component, inject, computed } from '@angular/core';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SectionHeading } from '../../shared/section-heading/section-heading';
 import { LanguageService } from '../../core/i18n/language.service';
 import { PORTFOLIO_STATIC } from '../../core/data/portfolio.data';
 
 @Component({
   selector: 'app-skills',
-  imports: [MatProgressBarModule, SectionHeading],
+  imports: [SectionHeading],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })

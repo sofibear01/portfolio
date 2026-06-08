@@ -1,0 +1,38 @@
+<section id="education" class="education section">
+    <app-section-heading
+      index="02."
+      [title]="languageService.t().education.title"
+      [subtitle]="languageService.t().education.subtitle"
+    />
+  
+    <mat-card class="education__card" appearance="outlined">
+      <mat-card-content>
+  
+        <div class="education__content">
+  
+          <div class="education__info">
+            <h3 class="education__degree">
+              {{ languageService.t().education.degree }}
+            </h3>
+  
+            <p class="education__university">
+              {{ languageService.t().education.university }}
+            </p>
+  
+            <p class="education__graduation">
+              {{ languageService.t().education.graduation }}
+            </p>
+          </div>
+  
+          <div class="education__image">
+            <img
+              src="images/recibida.jpg"
+              alt="Graduación de Sofia Bearzotti"
+            />
+          </div>
+  
+        </div>
+  
+      </mat-card-content>
+    </mat-card>
+  </section>
