@@ -64,11 +64,33 @@
 
 @media (max-width: 860px) {
   .hero {
-    min-height: auto;
-    padding-block: clamp(3rem, 12vw, 5rem) clamp(4rem, 14vw, 6rem);
+    align-items: stretch;
+    min-height: calc(100svh - var(--header-h));
+    padding-block: clamp(2rem, 8vw, 3rem)
+      max(clamp(2rem, 8vw, 3rem), calc(env(safe-area-inset-bottom) + 1.5rem));
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
   }
 
   .hero__role {
     font-size: 0.875rem;
+  }
+
+  // Role pinned to the top, actions to the bottom, name and tagline centred between them.
+  .hero__title {
+    margin-top: auto;
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .hero__tagline {
+    margin-top: 1.5rem;
+    margin-bottom: auto;
+  }
+
+  .hero__actions {
+    margin-top: 2.5rem;
   }
 }
