@@ -75,13 +75,14 @@
     flex-direction: column;
   }
 
+  // Role, name and tagline travel together, centred above the actions.
   .hero__role {
+    margin-top: auto;
     font-size: 0.875rem;
   }
 
-  // Role pinned to the top, actions to the bottom, name and tagline centred between them.
   .hero__title {
-    margin-top: auto;
+    margin-top: 0.875rem;
     font-size: clamp(3rem, 15vw, 4.5rem);
   }
 
