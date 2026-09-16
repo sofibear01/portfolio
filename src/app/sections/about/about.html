@@ -1,0 +1,22 @@
+@let t = language.t().about;
+
+<section id="about" class="about container" aria-labelledby="about-title">
+  <h2 id="about-title" class="about__title section-title" appReveal>{{ t.title }}</h2>
+
+  <div class="about__body">
+    @for (paragraph of t.paragraphs; track $index) {
+      <p class="about__paragraph" [class.about__paragraph--lead]="$first" appReveal [revealDelay]="$index * 100">
+        {{ paragraph }}
+      </p>
+    }
+
+    <dl class="about__stats">
+      @for (stat of t.stats; track $index) {
+        <div class="about__stat" appReveal [revealDelay]="120 + $index * 100">
+          <dt class="about__stat-label">{{ stat.label }}</dt>
+          <dd class="about__stat-value">{{ stat.value }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>

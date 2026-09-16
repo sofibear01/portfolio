@@ -1,0 +1,62 @@
+@let t = language.t();
+
+<header class="header" [class.header--open]="menuOpen()">
+  <div class="header__bar container">
+    <a class="header__brand" href="#top" [attr.aria-label]="t.header.logoAria" (click)="closeMenu()">
+      {{ static.firstName }} <span class="header__brand-last">{{ static.lastName }}</span>
+    </a>
+
+    <nav class="header__nav" [attr.aria-label]="t.header.navAria">
+      <ul class="header__links" id="site-nav">
+        @for (item of navItems(); track item.id) {
+          <li>
+            <a
+              class="header__link"
+              [href]="'#' + item.id"
+              [attr.aria-current]="spy.active() === item.id ? 'true' : null"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <div class="header__lang" role="group" [attr.aria-label]="t.header.languageAria">
+        @for (lang of languages; track lang) {
+          <button
+            type="button"
+            class="header__lang-btn"
+            [attr.aria-pressed]="language.lang() === lang"
+            (click)="language.setLanguage(lang)"
+          >
+            {{ lang.toUpperCase() }}
+          </button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="header__theme"
+        [attr.aria-label]="theme.isDark() ? t.header.themeLight : t.header.themeDark"
+        [attr.title]="theme.isDark() ? t.header.themeLight : t.header.themeDark"
+        (click)="theme.toggle()"
+      >
+        <span class="header__theme-swatch" aria-hidden="true"></span>
+      </button>
+
+      <button
+        type="button"
+        class="header__menu-btn"
+        aria-controls="site-nav"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="menuOpen() ? t.header.menuClose : t.header.menuOpen"
+        (click)="toggleMenu()"
+      >
+        <app-icon [name]="menuOpen() ? 'x' : 'list'" />
+      </button>
+    </div>
+  </div>
+</header>

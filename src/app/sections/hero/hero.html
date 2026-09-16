@@ -1,0 +1,25 @@
+@let t = language.t().hero;
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__inner container">
+    <p class="hero__role hero__enter" style="--enter-i: 0">{{ t.role }}</p>
+
+    <h1 id="hero-title" class="hero__title hero__enter" style="--enter-i: 1">
+      <span class="hero__first">{{ static.firstName }}</span>
+      <span class="hero__last">{{ static.lastName }}</span>
+    </h1>
+
+    <p class="hero__tagline hero__enter" style="--enter-i: 2">{{ t.tagline }}</p>
+
+    <div class="hero__actions hero__enter" style="--enter-i: 3">
+      <a class="btn btn--primary" href="#projects">
+        {{ t.viewProjects }}
+        <app-icon name="arrow-right" />
+      </a>
+      <a class="link-arrow" href="#contact">
+        {{ t.getInTouch }}
+        <app-icon name="arrow-up-right" />
+      </a>
+    </div>
+  </div>
+</section>

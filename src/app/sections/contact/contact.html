@@ -1,0 +1,40 @@
+@let t = language.t();
+
+<div class="closing">
+  <section id="contact" class="contact container" aria-labelledby="contact-title">
+    <p class="contact__label" appReveal>{{ t.contact.title }}</p>
+    <h2 id="contact-title" class="contact__heading" appReveal [revealDelay]="80">{{ t.contact.heading }}</h2>
+
+    <ul class="contact__channels">
+      @for (channel of static.contact; track channel.key; let i = $index) {
+        <li appReveal [revealDelay]="140 + i * 60">
+          <a
+            class="channel"
+            [href]="channel.url"
+            [attr.target]="channel.key === 'email' ? null : '_blank'"
+            [attr.rel]="channel.key === 'email' ? null : 'noopener noreferrer'"
+          >
+            <app-icon class="channel__icon" [name]="channel.icon" />
+            <span class="channel__text">
+              <span class="channel__label">{{ channel.label }}</span>
+              <span class="channel__handle">{{ channel.handle }}</span>
+            </span>
+            <app-icon class="channel__arrow" name="arrow-up-right" />
+          </a>
+        </li>
+      }
+    </ul>
+
+    <p class="contact__location">
+      <app-icon name="map-pin" />
+      {{ t.contact.location }}
+    </p>
+  </section>
+
+  <footer class="container">
+    <div class="footer">
+      <p>&copy; {{ year }} {{ static.name }}. {{ t.footer.rights }}</p>
+      <p>{{ t.footer.tagline }}</p>
+    </div>
+  </footer>
+</div>

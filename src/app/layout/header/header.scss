@@ -1,0 +1,196 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--header-bg);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid var(--line);
+}
+
+.header__bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: var(--header-h);
+}
+
+.header__brand {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header__brand-last {
+  color: var(--ink-soft);
+}
+
+.header__nav {
+  margin-inline: auto;
+}
+
+.header__links {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 200ms var(--ease-out);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.875rem;
+    right: 0.875rem;
+    bottom: 0.25rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 350ms var(--ease-out);
+  }
+
+  &:hover,
+  &[aria-current='true'] {
+    color: var(--ink);
+  }
+
+  &[aria-current='true']::after {
+    transform: scaleX(1);
+  }
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__lang {
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+}
+
+.header__lang-btn {
+  min-width: 2.5rem;
+  padding: 0.3125rem 0.5rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition:
+    background-color 200ms var(--ease-out),
+    color 200ms var(--ease-out);
+
+  &[aria-pressed='true'] {
+    background: var(--ink);
+    color: var(--bg);
+  }
+}
+
+.header__theme,
+.header__menu-btn {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
+  transition: transform 200ms var(--ease-out);
+
+  &:active {
+    transform: scale(0.94);
+  }
+}
+
+// Half peach, half forest: previews both themes instead of a sun/moon glyph.
+.header__theme-swatch {
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5dcc4 50%, #1c3829 50%);
+  box-shadow: 0 0 0 1.5px var(--ink);
+  transition: transform 500ms var(--ease-out);
+
+  :root[data-theme='dark'] & {
+    transform: rotate(180deg);
+  }
+}
+
+.header__menu-btn {
+  display: none;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 860px) {
+  .header__menu-btn {
+    display: grid;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity 250ms var(--ease-out),
+      transform 250ms var(--ease-out),
+      visibility 0s linear 250ms;
+  }
+
+  .header--open .header__nav {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 250ms var(--ease-out),
+      transform 250ms var(--ease-out);
+  }
+
+  .header__links {
+    flex-direction: column;
+    padding: 0.5rem var(--gutter) 1.25rem;
+  }
+
+  .header__link {
+    padding: 0.875rem 0;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--ink);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .header__brand-last {
+    display: none;
+  }
+}

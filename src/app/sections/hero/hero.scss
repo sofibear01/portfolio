@@ -1,0 +1,74 @@
+// Type-led hero: the name carries the page on its own, no imagery.
+.hero {
+  display: grid;
+  align-items: center;
+  min-height: min(calc(100dvh - var(--header-h)), 34rem);
+  padding-block: clamp(3rem, 9vw, 7rem);
+}
+
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero__title {
+  margin-top: 1.5rem;
+  font-size: clamp(2.75rem, 9vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.hero__first,
+.hero__last {
+  display: block;
+}
+
+// The surname steps in from the left edge, echoing the offset lettering in the reference art.
+.hero__last {
+  padding-left: clamp(1.5rem, 7vw, 7rem);
+  color: var(--accent-display);
+}
+
+.hero__tagline {
+  max-width: 34ch;
+  margin-top: 2rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__enter {
+    animation: hero-rise 900ms var(--ease-out) both;
+    animation-delay: calc(var(--enter-i) * 90ms + 60ms);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    min-height: auto;
+    padding-block: clamp(3rem, 12vw, 5rem) clamp(4rem, 14vw, 6rem);
+  }
+
+  .hero__role {
+    font-size: 0.875rem;
+  }
+}

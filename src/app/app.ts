@@ -1,12 +1,31 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { LanguageService } from './core/i18n/language.service';
+import { Header } from './layout/header/header';
+import { About } from './sections/about/about';
+import { Contact } from './sections/contact/contact';
+import { Education } from './sections/education/education';
+import { Hero } from './sections/hero/hero';
+import { Projects } from './sections/projects/projects';
+import { Skills } from './sections/skills/skills';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [Header, Hero, About, Education, Skills, Projects, Contact],
+  template: `
+    <a class="skip-link" href="#main">{{ language.t().skipLink }}</a>
+    <app-header />
+    <main id="main" tabindex="-1">
+      <span id="top"></span>
+      <app-hero />
+      <app-about />
+      <app-education />
+      <app-skills />
+      <app-projects />
+    </main>
+    <app-contact />
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  protected readonly title = signal('portfolio-2026');
+  protected readonly language = inject(LanguageService);
 }

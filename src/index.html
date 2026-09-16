@@ -1,11 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Portfolio2026</title>
+  <title>Sofia Bearzotti | Full Stack Developer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Portfolio de Sofia Bearzotti, Ingeniera en Sistemas y desarrolladora Full Stack con .NET, Angular y SQL Server.">
+  <meta name="theme-color" content="#f5dcc4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#122219" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sofia Bearzotti | Full Stack Developer">
+  <meta property="og:description" content="Ingeniera en Sistemas y desarrolladora Full Stack con .NET, Angular y SQL Server.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var theme;
+      try { theme = localStorage.getItem('portfolio-theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.dataset.theme = theme;
+      if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        root.classList.add('motion-ok');
+      }
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

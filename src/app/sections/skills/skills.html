@@ -1,0 +1,26 @@
+@let t = language.t().skills;
+
+<section id="skills" class="skills container" aria-labelledby="skills-title">
+  <div class="skills__header" appReveal>
+    <h2 id="skills-title" class="section-title">{{ t.title }}</h2>
+    <p class="skills__subtitle">{{ t.subtitle }}</p>
+  </div>
+
+  <div class="skills__bento">
+    @for (group of groups(); track group.key; let i = $index) {
+      <article class="tile" [class]="'tile--' + group.key" appReveal [revealDelay]="i * 70">
+        <h3 class="tile__title">{{ group.label }}</h3>
+        <ul class="tile__list">
+          @for (skill of group.skills; track skill.name) {
+            <li class="tile__item">
+              @if (skill.icon) {
+                <app-icon class="tile__icon" set="tech" [name]="skill.icon" />
+              }
+              <span>{{ skill.name }}</span>
+            </li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

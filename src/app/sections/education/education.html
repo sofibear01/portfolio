@@ -1,0 +1,17 @@
+@let t = language.t().education;
+
+<section id="education" class="education container" aria-labelledby="education-title">
+  <div class="education__panel" appReveal>
+    <div class="education__intro">
+      <h2 id="education-title" class="section-title">{{ t.title }}</h2>
+      <p class="education__subtitle">{{ t.subtitle }}</p>
+    </div>
+
+    <div class="education__degree-block">
+      <app-icon class="education__cap" name="graduation-cap" />
+      <h3 class="education__degree">{{ t.degree }}</h3>
+      <p class="education__university">{{ t.university }}</p>
+      <p class="education__year">{{ t.graduation }}</p>
+    </div>
+  </div>
+</section>
