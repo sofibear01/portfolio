@@ -1,4 +1,4 @@
-import type { NavId, ProjectStatic, SkillCategoryKey } from '../data/portfolio.data';
+import type { JobStatic, NavId, ProjectStatic, SkillCategoryKey } from '../data/portfolio.data';
 
 export type Language = 'es' | 'en';
 
@@ -25,6 +25,11 @@ export interface PortfolioTranslations {
     title: string;
     paragraphs: string[];
     stats: { value: string; label: string }[];
+  };
+  experience: {
+    title: string;
+    current: string;
+    items: Record<JobStatic['id'], { role: string; period: string; summary: string }>;
   };
   education: {
     title: string;
@@ -63,6 +68,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     skipLink: 'Saltar al contenido',
     nav: {
       about: 'Sobre mí',
+      experience: 'Experiencia',
       education: 'Educación',
       skills: 'Habilidades',
       projects: 'Proyectos',
@@ -93,6 +99,30 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
         { value: '3+', label: 'Años de experiencia' },
         { value: 'C1', label: 'Inglés' },
       ],
+    },
+    experience: {
+      title: 'Experiencia',
+      current: 'Actualidad',
+      items: {
+        oncity: {
+          role: 'Analista Desarrolladora de Software',
+          period: 'Desde marzo 2025',
+          summary:
+            'En el área de Finanzas, desarrollo integraciones con entidades bancarias y soluciones internas de gestión financiera. Front-end en Angular y back-end en .NET Framework, con bases de datos relacionales y seguimiento de tickets bajo Scrum.',
+        },
+        controlglobal: {
+          role: 'Desarrolladora Fullstack',
+          period: 'Mayo 2024 - Marzo 2025',
+          summary:
+            'Desarrollo back-end en .NET Framework y .NET Core, con integraciones a billeteras virtuales y entidades financieras de varios países, como Mercado Pago, Nave y Yappy. Bases de datos en SQL Server y gestión de proyectos con Scrum y Jira.',
+        },
+        arconsultores: {
+          role: 'Desarrolladora Fullstack',
+          period: 'Mayo 2023 - Mayo 2024',
+          summary:
+            'Soluciones backend en .NET y Java, tanto para la consultora como para el sistema de facturación de un cliente externo. Análisis funcional e interpretación de requerimientos, además del manejo de bases de datos SQL.',
+        },
+      },
     },
     education: {
       title: 'Educación',
@@ -148,6 +178,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     skipLink: 'Skip to content',
     nav: {
       about: 'About',
+      experience: 'Experience',
       education: 'Education',
       skills: 'Skills',
       projects: 'Projects',
@@ -178,6 +209,30 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
         { value: '3+', label: 'Years of experience' },
         { value: 'C1', label: 'English' },
       ],
+    },
+    experience: {
+      title: 'Experience',
+      current: 'Present',
+      items: {
+        oncity: {
+          role: 'Software Development Analyst',
+          period: 'Since March 2025',
+          summary:
+            'Within the Finance area, I build integrations with banking entities and internal financial management tools. Front-end in Angular and back-end in .NET Framework, working with relational databases and support tickets under Scrum.',
+        },
+        controlglobal: {
+          role: 'Fullstack Developer',
+          period: 'May 2024 - March 2025',
+          summary:
+            'Back-end development in .NET Framework and .NET Core, integrating digital wallets and financial entities across several countries, such as Mercado Pago, Nave and Yappy. SQL Server databases and project tracking with Scrum and Jira.',
+        },
+        arconsultores: {
+          role: 'Fullstack Developer',
+          period: 'May 2023 - May 2024',
+          summary:
+            'Backend solutions in .NET and Java, both for the consultancy and for an external client billing system. Functional analysis and requirement gathering, plus SQL database management.',
+        },
+      },
     },
     education: {
       title: 'Education',

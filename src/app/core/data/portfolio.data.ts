@@ -25,13 +25,38 @@ export interface ContactChannel {
   icon: string;
 }
 
-export const NAV_IDS = ['about', 'education', 'skills', 'projects', 'contact'] as const;
+export interface JobStatic {
+  id: 'oncity' | 'controlglobal' | 'arconsultores';
+  company: string;
+  stack: string[];
+  current?: boolean;
+}
+
+export const NAV_IDS = ['about', 'experience', 'education', 'skills', 'projects', 'contact'] as const;
 export type NavId = (typeof NAV_IDS)[number];
 
 export const PORTFOLIO_STATIC = {
   name: 'Sofia Bearzotti',
   firstName: 'Sofia',
   lastName: 'Bearzotti',
+  experience: [
+    {
+      id: 'oncity',
+      company: 'On City',
+      stack: ['Angular', '.NET Framework', 'SQL', 'Azure DevOps'],
+      current: true,
+    },
+    {
+      id: 'controlglobal',
+      company: 'Control Global',
+      stack: ['.NET Framework', '.NET Core', 'SQL Server', 'Jira'],
+    },
+    {
+      id: 'arconsultores',
+      company: 'Ar Consultores',
+      stack: ['.NET', 'Java', 'SQL'],
+    },
+  ] satisfies JobStatic[],
   skillCategories: ['frontend', 'backend', 'database', 'tools', 'softSkills'] satisfies SkillCategoryKey[],
   skills: [
     { name: 'Angular', icon: 'angular', categoryKey: 'frontend' },

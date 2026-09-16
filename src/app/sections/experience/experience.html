@@ -1,0 +1,29 @@
+@let t = language.t().experience;
+
+<section id="experience" class="experience container" aria-labelledby="experience-title">
+  <h2 id="experience-title" class="section-title experience__title" appReveal>{{ t.title }}</h2>
+
+  <ol class="experience__list">
+    @for (job of jobs(); track job.id) {
+      <li class="job" appReveal>
+        <div class="job__meta">
+          <p class="job__period">{{ job.period }}</p>
+          @if (job.current) {
+            <p class="job__badge">{{ t.current }}</p>
+          }
+        </div>
+
+        <div class="job__body">
+          <h3 class="job__company">{{ job.company }}</h3>
+          <p class="job__role">{{ job.role }}</p>
+          <p class="job__summary">{{ job.summary }}</p>
+          <ul class="job__stack">
+            @for (tech of job.stack; track tech) {
+              <li class="tag">{{ tech }}</li>
+            }
+          </ul>
+        </div>
+      </li>
+    }
+  </ol>
+</section>

@@ -1,0 +1,86 @@
+.experience {
+  padding-block: 0 var(--section-space);
+}
+
+.experience__title {
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.experience__list {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Dated rows: the period holds the left rail, the story sits on the right.
+.job {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 1rem clamp(2rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.job__period {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
+.job__badge {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.job__company {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.job__role {
+  margin-top: 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 550;
+  color: var(--accent-text);
+}
+
+.job__summary {
+  max-width: 62ch;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+}
+
+.job__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 860px) {
+  .job {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .job__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .job__badge {
+    margin-top: 0;
+  }
+}
