@@ -68,7 +68,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     meta: {
       title: 'Sofia Bearzotti | Full Stack Developer',
       description:
-        'Portfolio de Sofia Bearzotti, Ingeniera en Sistemas y desarrolladora Full Stack con .NET, Angular y SQL Server.',
+        'Portfolio de Sofia Bearzotti, Ingeniera en Sistemas y desarrolladora Full Stack. Desarrollo soluciones de software con distintas tecnologías, adaptadas a las necesidades de cada cliente.',
     },
     skipLink: 'Saltar al contenido',
     nav: {
@@ -90,7 +90,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     },
     hero: {
       role: 'Ingeniera en Sistemas | Full Stack Developer',
-      tagline: 'Desarrollo soluciones de software utilizando .NET, Angular y tecnologías modernas.',
+      tagline: 'Desarrollo soluciones de software con distintas tecnologías, adaptándome a las necesidades de cada cliente.',
       viewProjects: 'Ver proyectos',
       getInTouch: 'Contáctame',
     },
@@ -187,7 +187,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     meta: {
       title: 'Sofia Bearzotti | Full Stack Developer',
       description:
-        'Portfolio of Sofia Bearzotti, Systems Engineer and Full Stack Developer working with .NET, Angular and SQL Server.',
+        'Portfolio of Sofia Bearzotti, Systems Engineer and Full Stack Developer. I build software solutions with a range of technologies, tailored to the needs of each client.',
     },
     skipLink: 'Skip to content',
     nav: {
@@ -209,7 +209,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
     },
     hero: {
       role: 'Systems Engineer | Full Stack Developer',
-      tagline: 'Building software solutions using .NET, Angular and modern technologies.',
+      tagline: 'I build software solutions with a range of technologies, tailored to the needs of each client.',
       viewProjects: 'View projects',
       getInTouch: 'Get in touch',
     },
