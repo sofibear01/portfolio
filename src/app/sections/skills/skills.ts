@@ -15,11 +15,13 @@ export class Skills {
   protected readonly language = inject(LanguageService);
 
   protected readonly groups = computed(() => {
-    const labels = this.language.t().skills.categories;
+    const { categories, names = {} } = this.language.t().skills;
     return PORTFOLIO_STATIC.skillCategories.map((key) => ({
       key,
-      label: labels[key],
-      skills: PORTFOLIO_STATIC.skills.filter((skill: Skill) => skill.categoryKey === key),
+      label: categories[key],
+      skills: PORTFOLIO_STATIC.skills
+        .filter((skill: Skill) => skill.categoryKey === key)
+        .map((skill) => ({ ...skill, name: names[skill.name] ?? skill.name })),
     }));
   });
 }

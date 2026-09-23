@@ -8,11 +8,15 @@ export interface Skill {
 }
 
 export interface ProjectStatic {
-  id: 'fitbyjeny' | 'portfolio';
+  id: 'fitbyjeny' | 'store25' | 'portfolio';
   tags: string[];
   github?: string;
   demo?: string;
   image?: string;
+  /** Client work still being built; shown with a badge and a demo note. */
+  inProgress?: boolean;
+  /** Kept in the data but left out of the page until it's ready to show. */
+  hidden?: boolean;
 }
 
 export type ContactKey = 'whatsapp' | 'linkedin' | 'github' | 'email';
@@ -43,13 +47,13 @@ export const PORTFOLIO_STATIC = {
     {
       id: 'oncity',
       company: 'On City',
-      stack: ['Angular', '.NET Framework', 'SQL', 'Azure DevOps'],
+      stack: ['Angular', '.NET', 'SQL', 'Azure DevOps'],
       current: true,
     },
     {
       id: 'controlglobal',
       company: 'Control Global',
-      stack: ['.NET Framework', '.NET Core', 'SQL Server', 'Jira'],
+      stack: ['.NET', 'SQL Server', 'Jira'],
     },
     {
       id: 'arconsultores',
@@ -61,27 +65,28 @@ export const PORTFOLIO_STATIC = {
   skills: [
     { name: 'Angular', icon: 'angular', categoryKey: 'frontend' },
     { name: 'React', icon: 'react', categoryKey: 'frontend' },
+    { name: 'Next.js', icon: 'nextjs', categoryKey: 'frontend' },
     { name: 'TypeScript', icon: 'typescript', categoryKey: 'frontend' },
+    { name: 'Tailwind CSS', icon: 'tailwindcss', categoryKey: 'frontend' },
     { name: 'Bootstrap', icon: 'bootstrap', categoryKey: 'frontend' },
-    { name: 'Angular Material', categoryKey: 'frontend' },
 
-    { name: '.NET Framework', icon: 'dot-net', categoryKey: 'backend' },
-    { name: '.NET Core', icon: 'dotnetcore', categoryKey: 'backend' },
+    { name: '.NET', icon: 'dot-net', categoryKey: 'backend' },
     { name: 'C#', icon: 'csharp', categoryKey: 'backend' },
     { name: 'Node.js', icon: 'nodejs', categoryKey: 'backend' },
     { name: 'REST APIs', categoryKey: 'backend' },
 
     { name: 'SQL Server', icon: 'microsoftsqlserver', categoryKey: 'database' },
     { name: 'PostgreSQL', icon: 'postgresql', categoryKey: 'database' },
+    { name: 'Supabase', categoryKey: 'database' },
 
     { name: 'Git', icon: 'git', categoryKey: 'tools' },
     { name: 'Postman', icon: 'postman', categoryKey: 'tools' },
     { name: 'Insomnia', icon: 'insomnia', categoryKey: 'tools' },
     { name: 'Figma', icon: 'figma', categoryKey: 'tools' },
+    { name: 'Azure DevOps', icon: 'azuredevops', categoryKey: 'tools' },
+    { name: 'Jira', icon: 'jira', categoryKey: 'tools' },
 
     { name: 'Scrum', categoryKey: 'softSkills' },
-    { name: 'Jira', categoryKey: 'softSkills' },
-    { name: 'Azure DevOps', categoryKey: 'softSkills' },
     { name: 'Functional Analysis', categoryKey: 'softSkills' },
   ] satisfies Skill[],
   projects: [
@@ -90,6 +95,14 @@ export const PORTFOLIO_STATIC = {
       tags: ['React', 'Node.js', 'Supabase', 'TypeScript'],
       demo: 'https://fitbyjeny.com.ar/',
       image: 'images/fitbyjeny.webp',
+    },
+    {
+      id: 'store25',
+      tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      demo: 'https://e-commerce-nine-smoky-45.vercel.app/',
+      image: 'images/25store.webp',
+      inProgress: true,
+      hidden: true,
     },
     {
       id: 'portfolio',

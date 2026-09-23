@@ -42,13 +42,18 @@ export interface PortfolioTranslations {
     title: string;
     subtitle: string;
     categories: Record<SkillCategoryKey, string>;
+    /** Display names that differ from the static skill name, keyed by that name. */
+    names?: Record<string, string>;
   };
   projects: {
     title: string;
     code: string;
     liveDemo: string;
-    screenshotAlt: string;
-    items: Record<ProjectStatic['id'], { title: string; description: string }>;
+    inProgress: string;
+    items: Record<
+      ProjectStatic['id'],
+      { title: string; description: string; imageAlt?: string; note?: string }
+    >;
   };
   contact: {
     title: string;
@@ -108,13 +113,13 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
           role: 'Analista Desarrolladora de Software',
           period: 'Desde marzo 2025',
           summary:
-            'En el área de Finanzas, desarrollo integraciones con entidades bancarias y soluciones internas de gestión financiera. Front-end en Angular y back-end en .NET Framework, con bases de datos relacionales y seguimiento de tickets bajo Scrum.',
+            'En el área de Finanzas, desarrollo integraciones con entidades bancarias y soluciones internas de gestión financiera. Front-end en Angular y back-end en .NET, con bases de datos relacionales y seguimiento de tickets bajo Scrum.',
         },
         controlglobal: {
           role: 'Desarrolladora Fullstack',
           period: 'Mayo 2024 - Marzo 2025',
           summary:
-            'Desarrollo back-end en .NET Framework y .NET Core, con integraciones a billeteras virtuales y entidades financieras de varios países, como Mercado Pago, Nave y Yappy. Bases de datos en SQL Server y gestión de proyectos con Scrum y Jira.',
+            'Desarrollo back-end en .NET, con integraciones a billeteras virtuales y entidades financieras de varios países, como Mercado Pago, Nave y Yappy. Bases de datos en SQL Server y gestión de proyectos con Scrum y Jira.',
         },
         arconsultores: {
           role: 'Desarrolladora Fullstack',
@@ -137,21 +142,30 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       categories: {
         frontend: 'Frontend',
         backend: 'Backend',
-        database: 'Database',
-        tools: 'Tools',
-        softSkills: 'Soft Skills',
+        database: 'Base de datos',
+        tools: 'Herramientas',
+        softSkills: 'Habilidades blandas',
       },
+      names: { 'Functional Analysis': 'Análisis funcional' },
     },
     projects: {
       title: 'Proyectos',
       code: 'Código',
       liveDemo: 'Demo en vivo',
-      screenshotAlt: 'Página de inicio de Fit By Jeny',
+      inProgress: 'En desarrollo',
       items: {
         fitbyjeny: {
           title: 'Fit By Jeny',
           description:
             'Sitio web y plataforma desarrollada para una profesional del fitness con gestión de contenido, membresías y procesamiento de pagos.',
+          imageAlt: 'Página de inicio de Fit By Jeny',
+        },
+        store25: {
+          title: '25 Store',
+          description:
+            'Catálogo online para una tienda de tecnología. Muestra precios en pesos y en dólares según la cotización, calcula cuotas con interés, reúne la información de la tienda y deriva cada pedido a WhatsApp para confirmarlo.',
+          imageAlt: 'Página de inicio de 25 Store',
+          note: 'Proyecto en curso: la demo ya se puede recorrer. No se realizan compras; los pedidos se confirman por WhatsApp.',
         },
         portfolio: {
           title: 'Portfolio',
@@ -218,13 +232,13 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
           role: 'Software Development Analyst',
           period: 'Since March 2025',
           summary:
-            'Within the Finance area, I build integrations with banking entities and internal financial management tools. Front-end in Angular and back-end in .NET Framework, working with relational databases and support tickets under Scrum.',
+            'Within the Finance area, I build integrations with banking entities and internal financial management tools. Front-end in Angular and back-end in .NET, working with relational databases and support tickets under Scrum.',
         },
         controlglobal: {
           role: 'Fullstack Developer',
           period: 'May 2024 - March 2025',
           summary:
-            'Back-end development in .NET Framework and .NET Core, integrating digital wallets and financial entities across several countries, such as Mercado Pago, Nave and Yappy. SQL Server databases and project tracking with Scrum and Jira.',
+            'Back-end development in .NET, integrating digital wallets and financial entities across several countries, such as Mercado Pago, Nave and Yappy. SQL Server databases and project tracking with Scrum and Jira.',
         },
         arconsultores: {
           role: 'Fullstack Developer',
@@ -256,12 +270,20 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
       title: 'Projects',
       code: 'Code',
       liveDemo: 'Live demo',
-      screenshotAlt: 'Fit By Jeny home page',
+      inProgress: 'In progress',
       items: {
         fitbyjeny: {
           title: 'Fit By Jeny',
           description:
             'Web platform developed for a fitness professional. Features content management, training plans, user authentication and external service integrations built with React, Node.js, Supabase and TypeScript.',
+          imageAlt: 'Fit By Jeny home page',
+        },
+        store25: {
+          title: '25 Store',
+          description:
+            'Online catalog for a tech store. It shows prices in pesos and US dollars based on the exchange rate, calculates installments with interest, gathers the store information and sends every order to WhatsApp for confirmation.',
+          imageAlt: '25 Store home page',
+          note: 'Work in progress: the demo is already open to browse. No purchases are made; orders are confirmed over WhatsApp.',
         },
         portfolio: {
           title: 'Developer Portfolio',

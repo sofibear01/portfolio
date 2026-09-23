@@ -4,18 +4,24 @@
   <h2 id="projects-title" class="section-title projects__title" appReveal>{{ t.title }}</h2>
 
   <div class="projects__list">
-    @for (project of projects(); track project.id) {
-      <article class="project" [class.project--media]="project.image" appReveal>
+    @for (project of projects(); track project.id; let odd = $odd) {
+      <article class="project" [class.project--media]="project.image" [class.project--flip]="project.image && odd" appReveal>
         @if (project.image) {
           <a class="project__media" [href]="project.demo" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
             <span class="project__media-backdrop"></span>
-            <img [ngSrc]="project.image" width="1200" height="750" sizes="(max-width: 860px) 92vw, 42rem" [alt]="t.screenshotAlt" />
+            <img [ngSrc]="project.image" width="1200" height="750" sizes="(max-width: 860px) 92vw, 42rem" [alt]="project.imageAlt ?? ''" />
           </a>
         }
 
         <div class="project__body">
+          @if (project.inProgress) {
+            <p class="project__badge">{{ t.inProgress }}</p>
+          }
           <h3 class="project__title">{{ project.title }}</h3>
           <p class="project__description">{{ project.description }}</p>
+          @if (project.note) {
+            <p class="project__note">{{ project.note }}</p>
+          }
 
           <ul class="project__tags">
             @for (tag of project.tags; track tag) {
