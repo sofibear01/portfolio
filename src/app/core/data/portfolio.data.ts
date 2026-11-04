@@ -8,15 +8,13 @@ export interface Skill {
 }
 
 export interface ProjectStatic {
-  id: 'fitbyjeny' | 'store25' | 'portfolio';
+  id: 'fitbyjeny' | 'finanzas' | 'historiasClinicas' | 'store25' | 'portfolio';
   tags: string[];
   github?: string;
   demo?: string;
   image?: string;
-  /** Client work still being built; shown with a badge and a demo note. */
+  /** Work still being built; shown with a badge. */
   inProgress?: boolean;
-  /** Kept in the data but left out of the page until it's ready to show. */
-  hidden?: boolean;
 }
 
 export type ContactKey = 'whatsapp' | 'linkedin' | 'github' | 'email';
@@ -97,12 +95,18 @@ export const PORTFOLIO_STATIC = {
       image: 'images/fitbyjeny.webp',
     },
     {
+      id: 'finanzas',
+      tags: ['React', 'Node.js', 'Supabase'],
+    },
+    {
+      id: 'historiasClinicas',
+      tags: ['React', 'NestJS', 'Prisma', 'PostgreSQL', 'TypeScript'],
+      inProgress: true,
+    },
+    {
       id: 'store25',
       tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-      demo: 'https://e-commerce-nine-smoky-45.vercel.app/',
-      image: 'images/25store.webp',
       inProgress: true,
-      hidden: true,
     },
     {
       id: 'portfolio',

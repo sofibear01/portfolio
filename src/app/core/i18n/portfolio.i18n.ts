@@ -160,12 +160,20 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
             'Sitio web y plataforma desarrollada para una profesional del fitness con gestión de contenido, membresías y procesamiento de pagos.',
           imageAlt: 'Página de inicio de Fit By Jeny',
         },
+        finanzas: {
+          title: 'Gestión financiera',
+          description:
+            'Dashboard a medida para la gestión financiera de un cliente: cobros, cuentas corrientes en distintas monedas, cajas diarias, transferencias entre cuentas, flujo de fondos y métricas del negocio en un solo lugar.',
+        },
+        historiasClinicas: {
+          title: 'Historias Clínicas',
+          description:
+            'Sistema web para que médicos registren las historias clínicas de sus pacientes, empezando por pediatría. Notas de cada consulta con diagnósticos CIE-10, signos vitales, recetas, pedidos de estudios y archivos adjuntos, con acceso por usuario para cada profesional.',
+        },
         store25: {
           title: '25 Store',
           description:
             'Catálogo online para una tienda de tecnología. Muestra precios en pesos y en dólares según la cotización, calcula cuotas con interés, reúne la información de la tienda y deriva cada pedido a WhatsApp para confirmarlo.',
-          imageAlt: 'Página de inicio de 25 Store',
-          note: 'Proyecto en curso: la demo ya se puede recorrer. No se realizan compras; los pedidos se confirman por WhatsApp.',
         },
         portfolio: {
           title: 'Portfolio',
@@ -278,12 +286,20 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
             'Web platform developed for a fitness professional. Features content management, training plans, user authentication and external service integrations built with React, Node.js, Supabase and TypeScript.',
           imageAlt: 'Fit By Jeny home page',
         },
+        finanzas: {
+          title: 'Financial Management',
+          description:
+            "Custom dashboard for a client's financial management: collections, multi-currency customer accounts, daily cash registers, transfers between accounts, cash flow and business metrics in one place.",
+        },
+        historiasClinicas: {
+          title: 'Medical Records',
+          description:
+            "Web system for doctors to keep their patients' medical records, starting with pediatrics. Notes for every visit with ICD-10 diagnoses, vital signs, prescriptions, test orders and file attachments, with a personal login for each practitioner.",
+        },
         store25: {
           title: '25 Store',
           description:
             'Online catalog for a tech store. It shows prices in pesos and US dollars based on the exchange rate, calculates installments with interest, gathers the store information and sends every order to WhatsApp for confirmation.',
-          imageAlt: '25 Store home page',
-          note: 'Work in progress: the demo is already open to browse. No purchases are made; orders are confirmed over WhatsApp.',
         },
         portfolio: {
           title: 'Developer Portfolio',

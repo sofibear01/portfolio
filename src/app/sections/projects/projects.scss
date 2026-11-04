@@ -42,7 +42,22 @@
     display: contents;
   }
 
+  .project__description,
+  .project__note,
+  .project__tags,
+  .project__links {
+    grid-column: 2;
+  }
+
+  // The badge sits above the title, in the left column.
+  .project__badge {
+    grid-column: 1;
+    justify-self: start;
+    margin-bottom: 0;
+  }
+
   .project__title {
+    grid-column: 1;
     grid-row: span 4;
     font-size: clamp(1.875rem, 3.4vw, 2.75rem);
   }
@@ -143,7 +158,18 @@
     order: 0;
   }
 
-  .project:not(.project--media) .project__title {
-    grid-row: auto;
+  .project:not(.project--media) {
+    .project__badge,
+    .project__title,
+    .project__description,
+    .project__note,
+    .project__tags,
+    .project__links {
+      grid-column: auto;
+    }
+
+    .project__title {
+      grid-row: auto;
+    }
   }
 }

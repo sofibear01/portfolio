@@ -17,8 +17,6 @@ export class Projects {
 
   protected readonly projects = computed(() => {
     const items = this.language.t().projects.items;
-    return PORTFOLIO_STATIC.projects
-      .filter((project) => !project.hidden)
-      .map((project) => ({ ...project, ...items[project.id] }));
+    return PORTFOLIO_STATIC.projects.map((project) => ({ ...project, ...items[project.id] }));
   });
 }
