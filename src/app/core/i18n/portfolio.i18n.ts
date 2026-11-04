@@ -175,10 +175,6 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
           description:
             'Catálogo online para una tienda de tecnología. Muestra precios en pesos y en dólares según la cotización, calcula cuotas con interés, reúne la información de la tienda y deriva cada pedido a WhatsApp para confirmarlo.',
         },
-        portfolio: {
-          title: 'Portfolio',
-          description: 'Portfolio personal responsive con modo oscuro y animaciones.',
-        },
       },
     },
     contact: {
@@ -300,10 +296,6 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
           title: '25 Store',
           description:
             'Online catalog for a tech store. It shows prices in pesos and US dollars based on the exchange rate, calculates installments with interest, gathers the store information and sends every order to WhatsApp for confirmation.',
-        },
-        portfolio: {
-          title: 'Developer Portfolio',
-          description: 'Responsive personal portfolio with dark mode and animations.',
         },
       },
     },

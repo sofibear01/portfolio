@@ -8,7 +8,7 @@ export interface Skill {
 }
 
 export interface ProjectStatic {
-  id: 'fitbyjeny' | 'finanzas' | 'historiasClinicas' | 'store25' | 'portfolio';
+  id: 'fitbyjeny' | 'finanzas' | 'historiasClinicas' | 'store25';
   tags: string[];
   github?: string;
   demo?: string;
@@ -107,11 +107,6 @@ export const PORTFOLIO_STATIC = {
       id: 'store25',
       tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
       inProgress: true,
-    },
-    {
-      id: 'portfolio',
-      tags: ['Angular', 'SCSS', 'SSR'],
-      github: 'https://github.com/sofibear01/portfolio',
     },
   ] satisfies ProjectStatic[],
   contact: [

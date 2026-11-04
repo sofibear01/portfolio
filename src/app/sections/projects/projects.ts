@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { PORTFOLIO_STATIC } from '../../core/data/portfolio.data';
+import { PORTFOLIO_STATIC, ProjectStatic } from '../../core/data/portfolio.data';
 import { LanguageService } from '../../core/i18n/language.service';
 import { Icon } from '../../shared/icon/icon';
 import { Reveal } from '../../shared/reveal/reveal';
@@ -17,6 +17,7 @@ export class Projects {
 
   protected readonly projects = computed(() => {
     const items = this.language.t().projects.items;
-    return PORTFOLIO_STATIC.projects.map((project) => ({ ...project, ...items[project.id] }));
+    const projects: ProjectStatic[] = PORTFOLIO_STATIC.projects;
+    return projects.map((project) => ({ ...project, ...items[project.id] }));
   });
 }
