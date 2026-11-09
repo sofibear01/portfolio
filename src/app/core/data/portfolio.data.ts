@@ -96,7 +96,7 @@ export const PORTFOLIO_STATIC = {
     },
     {
       id: 'finanzas',
-      tags: ['React', 'Node.js', 'Supabase'],
+      tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     },
     {
       id: 'historiasClinicas',

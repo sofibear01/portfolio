@@ -163,7 +163,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
         finanzas: {
           title: 'Gestión financiera',
           description:
-            'Dashboard a medida para la gestión financiera de un cliente: cobros, cuentas corrientes en distintas monedas, cajas diarias, transferencias entre cuentas, flujo de fondos y métricas del negocio en un solo lugar.',
+            'Aplicación web a medida para la contabilidad de una agencia, que reemplaza sus planillas de cálculo. Reúne cajas y cuentas en pesos, dólares, euros, libras y USDT, transferencias y cambios de moneda, calendario de cobros y reportes como flujo de fondos, churn y CAC/LTV. Importa movimientos de Stripe, Wise, Mercury, Binance y Payoneer sin duplicarlos.',
         },
         historiasClinicas: {
           title: 'Historias Clínicas',
@@ -285,7 +285,7 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
         finanzas: {
           title: 'Financial Management',
           description:
-            "Custom dashboard for a client's financial management: collections, multi-currency customer accounts, daily cash registers, transfers between accounts, cash flow and business metrics in one place.",
+            "Custom web application for an agency's accounting, replacing its spreadsheets. It brings together cash and bank accounts in pesos, US dollars, euros, pounds and USDT, transfers and currency exchanges, a payment calendar and reports such as cash flow, churn and CAC/LTV. It imports transactions from Stripe, Wise, Mercury, Binance and Payoneer without duplicating them.",
         },
         historiasClinicas: {
           title: 'Medical Records',
