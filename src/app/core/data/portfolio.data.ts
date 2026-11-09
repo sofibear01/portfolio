@@ -8,7 +8,7 @@ export interface Skill {
 }
 
 export interface ProjectStatic {
-  id: 'fitbyjeny' | 'finanzas' | 'historiasClinicas' | 'store25';
+  id: 'fitbyjeny' | 'finanzas' | 'ventasWhatsapp' | 'historiasClinicas' | 'store25';
   tags: string[];
   github?: string;
   demo?: string;
@@ -97,6 +97,10 @@ export const PORTFOLIO_STATIC = {
     {
       id: 'finanzas',
       tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    },
+    {
+      id: 'ventasWhatsapp',
+      tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Meta Conversions API'],
     },
     {
       id: 'historiasClinicas',

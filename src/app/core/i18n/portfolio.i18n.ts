@@ -165,6 +165,11 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
           description:
             'Aplicación web a medida para la contabilidad de una agencia, que reemplaza sus planillas de cálculo. Reúne cajas y cuentas en pesos, dólares, euros, libras y USDT, transferencias y cambios de moneda, calendario de cobros y reportes como flujo de fondos, churn y CAC/LTV. Importa movimientos de Stripe, Wise, Mercury, Binance y Payoneer sin duplicarlos.',
         },
+        ventasWhatsapp: {
+          title: 'Ventas por WhatsApp',
+          description:
+            'Panel de control para un negocio que vende por WhatsApp con anuncios de Meta. Registra contactos y ventas, arma el ranking de clientes y muestra métricas como facturación y ventas por categoría. Cada venta se envía a Meta por la API de Conversiones para medir el resultado de los anuncios.',
+        },
         historiasClinicas: {
           title: 'Historias Clínicas',
           description:
@@ -286,6 +291,11 @@ export const PORTFOLIO_I18N: Record<Language, PortfolioTranslations> = {
           title: 'Financial Management',
           description:
             "Custom web application for an agency's accounting, replacing its spreadsheets. It brings together cash and bank accounts in pesos, US dollars, euros, pounds and USDT, transfers and currency exchanges, a payment calendar and reports such as cash flow, churn and CAC/LTV. It imports transactions from Stripe, Wise, Mercury, Binance and Payoneer without duplicating them.",
+        },
+        ventasWhatsapp: {
+          title: 'WhatsApp Sales Dashboard',
+          description:
+            'Control panel for a business that sells over WhatsApp using Meta ads. It records contacts and sales, ranks customers and shows metrics such as revenue and sales by category. Every sale is sent to Meta through the Conversions API to measure how the ads perform.',
         },
         historiasClinicas: {
           title: 'Medical Records',
